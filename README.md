@@ -2,6 +2,7 @@
 
 This project was developed as part of the ISRO Hackathon 2025. It addresses the challenge of enhancing the resolution and visual clarity of satellite imagery using a pipeline that includes pre-processing and deep learning-based super-resolution.
 
+
 # Problem Statement
 
 Satellite images often suffer from resolution limitations due to sensor constraints or transmission limitations. This project proposes a method to enhance low-resolution satellite images through:
@@ -11,6 +12,7 @@ Satellite images often suffer from resolution limitations due to sensor constrai
 - Brightness normalization
 
 - Deep learning-based image super-resolution
+
 
 # Approach
 
@@ -23,6 +25,7 @@ The pipeline includes the following major stages:
 3. Super-Resolution: An ESRGAN-based model (via TensorFlow Hub) is applied to enhance image resolution.
 
 4. Quality Analysis: Peak Signal-to-Noise Ratio (PSNR) and Structural Similarity Index (SSIM) are computed to evaluate output quality.
+
 
 # Directory Structure
 
@@ -50,10 +53,23 @@ outputs/super_resolved/image1_bicubic.png
 outputs/super_resolved/image1_edsr.png
 outputs/super_resolved/image1_pipeline_edsr.png
 
+
+## 📊 Quality Evaluation
+
+We computed PSNR and SSIM to compare the image quality between different super-resolution techniques:
+
+| Method             | PSNR (dB) | SSIM   |
+|--------------------|-----------|--------|
+| Bicubic            | 21.43     | 0.7708 |
+| EDSR (ESRGAN)      | 11.14     | 0.3334 |
+| Full Pipeline (Ours) | 9.84    | 0.2753 |
+
+
 # Requirements:
 
 Install the dependencies using:
 pip install -r requirements.txt
+
 
 # Key packages include:
 
@@ -63,6 +79,7 @@ OpenCV
 NumPy
 Matplotlib
 Scikit-Image
+
 
 # Author:
 
